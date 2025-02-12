@@ -9,10 +9,9 @@ class Person:
 
 
 def my_decorator(func):
-    import numpy as np 
-    def wrapper(*args,**kwargs):
+    def wrapper(*args):
         print("before")
-        func(*args, **kwargs)
+        func(*args)
         print("after function")
         
     return wrapper
@@ -22,10 +21,12 @@ def my_decorator(func):
 def produitSclaire(v1,v2):
     import numpy as np 
     v3 = np.dot(v1,v2)
+    print(v3)
     
     return v3
     
     
-    
-print(produitSclaire([3,4],[4,9]))
+import numpy as np     
+v = produitSclaire(np.array([3,4]),np.array([4,9]))
 
+print(v)
