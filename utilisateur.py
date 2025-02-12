@@ -1,11 +1,18 @@
 from dataclasses import dataclass, field
 
-@dataclass(frozen=True)
+# @dataclass(frozen=True)
 class Person:
-    name:str
-    age:int
-    hobbies:list = field(default_factory=list)
+    def __init__(self,name:str,age:int,hobbies:list ):
+        self._name = name
+        self._age = age
+        self._hobbies = hobbies
     
+    @property
+    def nameMethod(self):
+        return self._name
+    
+    def setName(self,name):
+        self._name = name
 
 
 def my_decorator(func):
@@ -30,3 +37,10 @@ import numpy as np
 v = produitSclaire(np.array([3,4]),np.array([4,9]))
 
 print(v)
+
+
+p1 = Person("hamid",33," internet , data ...")
+
+p1.setName("Ahmed")
+
+print(p1.nameMethod)
