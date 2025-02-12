@@ -1,4 +1,5 @@
 import numpy as np 
+from utilisateur import Person
 
 def operations(v1,v2,oprs):
     if oprs =="+":
@@ -14,5 +15,9 @@ def operations(v1,v2,oprs):
 v1 = np.array([[1,2],[2,4]])
 v2 = np.array([1,3])
 print(operations(v1,v2,"-"))
+
+p1 = Person("hamid",33," internet , data ...")
+
+print(p1.nameMethod)
 
     
